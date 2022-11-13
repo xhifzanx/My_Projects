@@ -42,12 +42,12 @@ def function():
     sunrise_time = 5
     if (now_hour > sunset_time or now_hour<sunrise_time) and ((iss_latitude >= MY_LAT-5 or iss_latitude <= MY_LAT+5) and (iss_longitude >= MY_LONG-5 or iss_longitude <= MY_LONG+5)):
         print("look up")
-        my_email = "xhifzan@gmail.com"
-        my_password = "Hifzan@1234"
+        my_email = "YOUR EMAIL"
+        my_password = "YOUR PASSWORD"
         connection = smtplib.SMTP("smtp.gmail.com")
         connection.starttls()
         connection.login(user=my_email, password=my_password)
-        connection.sendmail(from_addr=my_email, to_addrs="misterj435@gmail.com", msg="Lookup")
+        connection.sendmail(from_addr=my_email, to_addrs="YOUR EMAIL", msg="Lookup")
         connection.close()
     else:
         print("wait sometime")
