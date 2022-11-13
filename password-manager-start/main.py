@@ -83,7 +83,7 @@ name_email = Label(text="Email/Username:")
 name_email.grid(row=2, column=0)
 name_email_entry = Entry(width=38)
 name_email_entry.grid(row=2, column=1, columnspan=2)
-name_email_entry.insert(0, "misterj435@gmail.com")
+name_email_entry.insert(0, "email")
 
 password = Label(text="Password:")
 password.grid(row=3, column=0)
