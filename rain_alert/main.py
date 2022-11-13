@@ -2,8 +2,7 @@ import requests
 import os
 
 api_key = os.environ.get("OWM_API_KEY")
-# api_key = "752e3cc0ad49059cd471c30285620744"
-#'coord': {'lon': 81.85, 'lat': 25.45}
+
 parameters = {
     "lat": 25.45,
     "lon": 81.85,
