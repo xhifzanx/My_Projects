@@ -8,8 +8,8 @@ class User:
         self.following+=1
         user.followers+=1
 
-user_1 = User("001", "hifzan")
-user_2 = User("002", "hifzan2")
+user_1 = User("001", "sam")
+user_2 = User("002", "sam")
 print(f"User id = {user_1.user_id} and User Name = {user_1.user_name}")
 
 user_2.follow(user_1)
