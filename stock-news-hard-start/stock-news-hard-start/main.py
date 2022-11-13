@@ -8,8 +8,8 @@ COMPANY_NAME = "Tesla Inc"
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
 
-my_news_api_key = "083eef31b22246d6b0d1de64cef68c2f"
-my_alphavintage_api_key = "DZ2IMOKZ6K8K9F09"
+my_news_api_key = "YOUR API KEY"
+my_alphavintage_api_key = "YOUR API KEY"
 
 now = dt.date
 today = now.today()
@@ -23,11 +23,10 @@ stock_parameters = {
 }
 news_parameters = {
     "q": COMPANY_NAME,
-    "from": "2022-08-13",
+    "from": "2022-09-5",
     "apiKey": my_news_api_key,
 }
 
-#'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=demo'
 
 response = requests.get(url=STOCK_ENDPOINT, params=stock_parameters)
 response.raise_for_status()
@@ -43,7 +42,6 @@ print(percentage)
 if percentage >= 5:
     print("alert")
 
-#https://newsapi.org/v2/everything?q=tesla&from=2022-07-12&sortBy=publishedAt&apiKey=083eef31b22246d6b0d1de64cef68c2f
 
 respond = requests.get(url=NEWS_ENDPOINT, params=news_parameters)
 respond.raise_for_status()
@@ -52,25 +50,6 @@ for i in range(0, 3):
     print(f"{i+1}: {news_data['articles'][i]['content']}")
 
 
-## STEP 2: Use https://newsapi.org/docs/endpoints/everything
-# Instead of printing ("Get News"), actually fetch the first 3 articles for the COMPANY_NAME. 
-#HINT 1: Think about using the Python Slice Operator
 
 
-## STEP 3: Use twilio.com/docs/sms/quickstart/python
-# Send a separate message with each article's title and description to your phone number. 
-#HINT 1: Consider using a List Comprehension.
-
-
-
-#Optional: Format the SMS message like this: 
-"""
-TSLA: 🔺2%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-or
-"TSLA: 🔻5%
-Headline: Were Hedge Funds Right About Piling Into Tesla Inc. (TSLA)?. 
-Brief: We at Insider Monkey have gone over 821 13F filings that hedge funds and prominent investors are required to file by the SEC The 13F filings show the funds' and investors' portfolio positions as of March 31st, near the height of the coronavirus market crash.
-"""
 
